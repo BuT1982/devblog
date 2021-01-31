@@ -8,7 +8,7 @@ class HomePost(ListView):
     model = Post
     template_name = 'blog/index.html'
     context_object_name = 'posts'
-    paginate_by = 4
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -16,8 +16,15 @@ class HomePost(ListView):
         return context
 
 
-def get_post(request, slug):
-    return render(request, 'blog/index.html')
+class GetPost(DetailView):
+    model = Post
+    template_name = 'blog/blog_post.html'
+    context_object_name = 'post'
+
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['title'] = 'Blog'
+    #     return context
 
 
 class PostByCategory(ListView):

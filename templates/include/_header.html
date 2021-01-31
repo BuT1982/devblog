@@ -1,7 +1,7 @@
 {% load static %}
 {% load menu_category %}
 <header class="header text-center">
-    <h1 class="blog-name pt-lg-4 mb-0"><a href="{% url 'home' %}">Anthony's Blog</a></h1>
+    <h1 class="blog-name pt-lg-4 mb-0"><a href="{% url 'home' %}">BuT Blog</a></h1>
 
     <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -12,10 +12,11 @@
 
         <div id="navigation" class="collapse navbar-collapse flex-column">
             <div class="profile-section pt-3 pt-lg-0">
-                <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/profile.png' %}"
-                     alt="image">
+                <a href="{% url 'home' %}"><img class="profile-image mb-3 rounded-circle mx-auto"
+                                           src="{% static 'assets/images/but.jpg' %}"
+                                           alt="image"></a>
 
-                <div class="bio mb-3">Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also provide
+                <div class="bio mb-3">Hi, my name is BuTcher. Briefly introduce yourself here. You can also provide
                     a link to the about page.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
                 <ul class="social-list list-inline py-3 mx-auto">
                     <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
@@ -32,7 +33,9 @@
                     <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
                             class="sr-only">(current)</span></a>
                 </li>
+
                 {% show_menu_category %}
+
                 <li class="nav-item">
                     <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
                 </li>
